@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ExamenMoviles.Pages.Menu"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Menu">
+    <VerticalStackLayout>
+
+        <Button
+            BackgroundColor="Green"
+            Clicked="BtnSendToAgregarNombreTienda"
+            Text="Agregar Nombre a la tienda"
+            TextColor="White" />
+        <Button
+            BackgroundColor="Red"
+            Clicked="BtnEliminarNombreTienda"
+            Text="Eliminar Nombre de Tienda"
+            TextColor="White" />
+        <Entry x:Name="inUrlSplash" />
+        <Button Clicked="BtnAgregarSplashScreen" Text="Agregar Splash Screen Image" />
+
+    </VerticalStackLayout>
+</ContentPage>

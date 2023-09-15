@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ExamenMoviles.Pages.Productos"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Productos">
+    <ScrollView>
+        <VerticalStackLayout Padding="5">
+            <!--  Elemento que carga la imagen que se quiere guardar  -->
+            <Image
+                x:Name="imagenPreview"
+                HeightRequest="120"
+                IsVisible="false" />
+            <Label FontSize="Medium" Text="nombre" />
+            <Entry x:Name="name" FontSize="Medium" />
+            <Label FontSize="Medium" Text="Descripcion" />
+            <Entry x:Name="description" FontSize="Medium" />
+            <Label FontSize="Medium" Text="Cantidad" />
+            <Entry
+                x:Name="quantity"
+                FontSize="Medium"
+                Keyboard="Numeric" />
+            <Label FontSize="Medium" Text="Costo" />
+            <Entry
+                x:Name="cost"
+                FontSize="Medium"
+                Keyboard="Numeric" />
+            <Label FontSize="Medium" Text="Venta" />
+            <Entry
+                x:Name="sale"
+                FontSize="Medium"
+                Keyboard="Numeric" />
+            <Label FontSize="Medium" Text="URL de la foto" />
+            <Entry
+                x:Name="url"
+                FontSize="Medium"
+                TextChanged="UrlEntry_TextChanged" />
+            <HorizontalStackLayout Padding="5">
+                <Button
+                    x:Name="saveBtn"
+                    BackgroundColor="#3C9513"
+                    Clicked="Guardar_Clicked"
+                    FontSize="Medium"
+                    IsEnabled="false"
+                    Text="Guardar"
+                    TextColor="#FCFCE9" />
+                <Button
+                    x:Name="editBtn"
+                    BackgroundColor="#939513"
+                    Clicked="Modificar_Clicked"
+                    FontSize="Medium"
+                    IsVisible="false"
+                    Text="Editar"
+                    TextColor="#FCFCE9" />
+                <Button
+                    x:Name="cancelBtn"
+                    BackgroundColor="#133C95"
+                    Clicked="ResetearBtns"
+                    FontSize="Medium"
+                    IsVisible="false"
+                    Text="Cancelar"
+                    TextColor="#FCFCE9" />
+            </HorizontalStackLayout>
+            <ListView
+                x:Name="productsList"
+                Margin="15,1"
+                ItemTapped="productsList_ItemTapped"
+                RowHeight="100"
+                SeparatorColor="Coral">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <StackLayout Padding="5,0" Orientation="Horizontal">
+                                    <Image HeightRequest="80" Source="{Binding UrlFoto}" />
+                                    <Label Text="{Binding Nombre, StringFormat=' | Nombre: {0} '}" />
+                                    <Label Text="{Binding Descripcion, StringFormat=' | Descripción: {0} '}" />
+                                    <Label Text="{Binding Cantidad, StringFormat=' | Cantidad: {0} '}" />
+                                    <Label Text="{Binding Costo, StringFormat=' | Costo: {0} '}" />
+                                    <Label Text="{Binding Venta, StringFormat=' | Venta: {0} '}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

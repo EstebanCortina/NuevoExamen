@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ExamenMoviles.Resources.Splash.CustomSplash"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="False">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Image x:Name="splashImg" Aspect="AspectFill" />
+    </StackLayout>
+</ContentPage>
